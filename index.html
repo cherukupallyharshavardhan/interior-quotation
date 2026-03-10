@@ -1,0 +1,488 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>AURA SPACE – Interior Quotation</title>
+
+<style>
+
+body{
+font-family:Segoe UI;
+background:#f4f6fb;
+padding:30px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1{
+margin-top:0;
+}
+
+.section{
+margin-top:35px;
+}
+
+.section h2{
+border-bottom:2px solid #eee;
+padding-bottom:5px;
+}
+
+.edit{
+background:#fff8dc;
+padding:4px;
+border-radius:4px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+margin-top:15px;
+}
+
+input{
+width:100%;
+padding:8px;
+border:1px solid #ccc;
+border-radius:4px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+th{
+background:#1e2a38;
+color:white;
+padding:10px;
+}
+
+td{
+border:1px solid #eee;
+padding:6px;
+text-align:center;
+}
+
+td input{
+width:100%;
+border:none;
+text-align:center;
+}
+
+button{
+background:#1e2a38;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:5px;
+cursor:pointer;
+margin-top:10px;
+}
+
+button:hover{
+background:#2e4053;
+}
+
+.summary{
+width:320px;
+margin-left:auto;
+margin-top:20px;
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+padding:6px;
+border-bottom:1px solid #eee;
+}
+
+.grand{
+font-size:18px;
+font-weight:bold;
+}
+
+.signature{
+display:flex;
+justify-content:space-between;
+margin-top:60px;
+}
+
+@media print{
+button{display:none;}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 contenteditable class="edit">AURA SPACE – Interior & Décor</h1>
+<p contenteditable class="edit">Interior Design Proposal</p>
+
+<div class="grid">
+
+<input placeholder="Client Name">
+<input placeholder="Phone">
+
+<input placeholder="Project Location">
+<input placeholder="Date">
+
+<input placeholder="Project Type">
+
+<input placeholder="Quote No:">
+
+</div>
+
+
+<div class="section">
+
+<h2>Project Scope</h2>
+
+<p contenteditable class="edit">
+
+• Modular Kitchen <br>
+• Bedroom Wardrobes <br>
+• False Ceiling <br>
+• TV Unit <br>
+• Shoe Rack <br>
+• Pooja Unit <br>
+• Beds With Storage <br>
+• Utility Cupboard
+
+</p>
+
+</div>
+
+
+
+
+<div class="section">
+
+<h2>Bill Of Quantities</h2>
+
+<table id="boq">
+
+<thead>
+
+<tr>
+<th>S.No</th>
+<th>Item</th>
+<th>Material</th>
+<th>Length</th>
+<th>Height</th>
+<th>Depth</th>
+<th>Area</th>
+<th>Rate</th>
+<th>Total</th>
+<th></th>
+</tr>
+
+</thead>
+
+<tbody></tbody>
+
+</table>
+
+<button onclick="addRow()">Add Item</button>
+<button onclick="calculate()">Calculate</button>
+
+</div>
+
+
+<div class="summary">
+
+<div class="row">
+<span>Subtotal</span>
+<span id="subtotal">0</span>
+</div>
+
+<div class="row">
+<span>Discount (10%)</span>
+<span id="discount">0</span>
+</div>
+
+<div class="row">
+<span>GST (18%)</span>
+<span id="gst">0</span>
+</div>
+
+<div class="row grand">
+<span>Grand Total</span>
+<span id="grand">0</span>
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h2>Material Specifications</h2>
+
+<p contenteditable class="edit">
+
+19mm BWP Marine Plywood <br>
+1mm Decorative Laminate Finish <br>
+Soft Close Hinges <br>
+Telescopic Drawer Channels <br>
+Premium Edge Banding <br>
+Gypsum False Ceiling With LED Profiles
+
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h2>Hardware Brands</h2>
+
+<p contenteditable class="edit">
+
+Hettich <br>
+Häfele <br>
+Ebco
+
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h2>Project Timeline</h2>
+
+<p contenteditable class="edit">
+Estimated Completion: 30–35 Days
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h2>Payment Terms</h2>
+
+<table>
+
+<tr>
+<th>Stage</th>
+<th>Payment</th>
+</tr>
+<tr>
+<td>2D/3D design selection</td>
+<td contenteditable class="edit">10%</td>
+</tr>
+
+<tr>
+<td>Advance</td>
+<td contenteditable class="edit">40%</td>
+</tr>
+
+<tr>
+<td>Mid Work</td>
+<td contenteditable class="edit">40%</td>
+</tr>
+
+<tr>
+<td>Completion</td>
+<td contenteditable class="edit">10%</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="section">
+
+<h2>Warranty</h2>
+
+<p contenteditable class="edit">
+
+Plywood Warranty – 10 Years <br>
+Hardware Warranty – 5 Years <br>
+Workmanship Warranty – 2 Years
+
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h2>Terms & Conditions</h2>
+
+<p contenteditable class="edit">
+
+Prices include material and labour only. <br>
+Electrical appliances not included. <br>
+Design changes during execution may change the cost. <br>
+Transport charges extra. <br>
+Quotation valid for 15 days.
+
+</p>
+
+</div>
+
+
+<div class="signature">
+
+<div>
+Client Signature<br><br>
+____________________
+</div>
+
+<div>
+Company Signature<br><br>
+AURA SPACE – Interior & Décor
+</div>
+
+</div>
+
+<br>
+
+<div style="margin-top:20px">
+
+<button onclick="shareWhatsApp()">Share WhatsApp</button>
+
+<button onclick="window.print()">Save PDF</button>
+</div>
+
+</div>
+
+
+<script>
+
+function addRow(){
+
+let tbody=document.querySelector("#boq tbody")
+
+let row=document.createElement("tr")
+
+row.innerHTML=`
+
+<td></td>
+
+<td><input placeholder="Wardrobe / TV Unit"></td>
+
+<td><input placeholder="BWP / HDHMR"></td>
+
+<td><input type="number" class="l"></td>
+
+<td><input type="number" class="h"></td>
+
+<td><input type="number" class="d"></td>
+
+<td class="area">0</td>
+
+<td><input type="number" class="r"></td>
+
+<td class="t">0</td>
+
+<td><button onclick="removeRow(this)">X</button></td>
+
+`
+
+tbody.appendChild(row)
+
+updateNumbers()
+
+}
+
+function removeRow(btn){
+
+btn.parentElement.parentElement.remove()
+
+updateNumbers()
+calculate()
+
+}
+
+function updateNumbers(){
+
+let rows=document.querySelectorAll("#boq tbody tr")
+
+rows.forEach((row,i)=>{
+
+row.children[0].innerText=i+1
+
+})
+
+}
+
+document.addEventListener("input",calculate)
+
+function calculate(){
+
+let rows=document.querySelectorAll("#boq tbody tr")
+
+let subtotal=0
+
+rows.forEach(row=>{
+
+let l=row.querySelector(".l").value||0
+let h=row.querySelector(".h").value||0
+let r=row.querySelector(".r").value||0
+
+let area=l*h
+
+let total=area*r
+
+row.querySelector(".area").innerText=area
+
+row.querySelector(".t").innerText=total
+
+subtotal+=total
+
+})
+
+let discount=subtotal*0.10
+
+let after=subtotal-discount
+
+let gst=after*0.18
+
+let grand=after+gst
+
+document.getElementById("subtotal").innerText=subtotal.toFixed(0)
+document.getElementById("discount").innerText=discount.toFixed(0)
+document.getElementById("gst").innerText=gst.toFixed(0)
+document.getElementById("grand").innerText=grand.toFixed(0)
+
+}
+function shareWhatsApp(){
+
+let client = document.querySelector("input[placeholder='Client Name']").value
+
+let total = document.getElementById("grand").innerText
+
+let message =
+"Interior Quotation\n\n" +
+"Client: " + client + "\n" +
+"Grand Total: ₹" + total + "\n\n" +
+"Shared via AURA SPACE";
+
+let url = "https://wa.me/?text=" + encodeURIComponent(message)
+
+window.open(url,"_blank")
+
+}
+
+</script>
+
+
+</body>
+</html>
+```
+s
