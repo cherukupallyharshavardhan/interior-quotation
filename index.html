@@ -171,59 +171,52 @@ button{display:none;}
 
 <h2>Bill Of Quantities</h2>
 
+</div>
+
+<div class="table-wrap">
+
 <table id="boq">
 
 <thead>
 
 <tr>
-<th>S.No</th>
-<th>Item</th>
+
+<th>#</th>
+<th>Item Description</th>
 <th>Material</th>
 <th>Length</th>
 <th>Height</th>
 <th>Depth</th>
-<th>Area</th>
+<th>Sq.ft</th>
 <th>Rate</th>
 <th>Total</th>
-<th></th>
+<th>Action</th>
+
 </tr>
 
 </thead>
 
-<tbody></tbody>
+<tbody id="boqBody"></tbody>
 
 </table>
 
-<button onclick="addRow()">Add Item</button>
-<button onclick="calculate()">Calculate</button>
-
 </div>
 
+<div class="buttons">
 
-<div class="summary">
+<button class="primary" onclick="addRow()">
++ Add Item
+</button>
 
-<div class="row">
-<span>Subtotal</span>
-<span id="subtotal">0</span>
-</div>
+<button class="gold" onclick="calculate()">
+Calculate
+</button>
 
-<div class="row">
-<span>Discount (10%)</span>
-<span id="discount">0</span>
-</div>
-
-<div class="row">
-<span>GST (18%)</span>
-<span id="gst">0</span>
-</div>
-
-<div class="row grand">
-<span>Grand Total</span>
-<span id="grand">0</span>
-</div>
+<button class="green" onclick="window.print()">
+Save PDF
+</button>
 
 </div>
-
 
 <div class="section">
 
