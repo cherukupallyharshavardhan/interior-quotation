@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
@@ -26,7 +25,7 @@ color:#1e293b;
 }
 
 .container{
-max-width:1500px;
+max-width:1400px;
 margin:auto;
 background:white;
 border-radius:20px;
@@ -108,19 +107,19 @@ color:#64748b;
 }
 
 input,
-textarea,
-select{
+textarea{
 padding:14px;
 border:1px solid #dbe3ec;
 border-radius:12px;
 font-family:Poppins;
 font-size:14px;
 outline:none;
+width:100%;
 }
 
 textarea{
 resize:vertical;
-min-height:120px;
+min-height:100px;
 line-height:1.7;
 }
 
@@ -132,10 +131,10 @@ border-radius:16px;
 line-height:1.9;
 }
 
-/* TABLE */
+/* BOQ */
 
 .table-wrap{
-overflow:auto;
+overflow-x:auto;
 border:1px solid #e2e8f0;
 border-radius:18px;
 }
@@ -143,55 +142,55 @@ border-radius:18px;
 table{
 width:100%;
 border-collapse:collapse;
-min-width:1500px;
+min-width:1000px;
 }
 
 th{
 background:#0f172a;
 color:white;
-padding:16px;
+padding:14px;
 font-size:13px;
 text-transform:uppercase;
+white-space:nowrap;
 }
 
 td{
 padding:10px;
 border-bottom:1px solid #edf2f7;
-vertical-align:top;
+vertical-align:middle;
 }
 
-.big-text{
-width:100%;
-min-height:120px;
+td input,
+td textarea{
 border:none;
-outline:none;
-font-family:Poppins;
+padding:10px;
 background:transparent;
-padding:10px;
+font-size:14px;
 }
 
-.measure{
-width:100%;
-padding:10px;
-border:none;
-outline:none;
+td input:focus,
+td textarea:focus{
+background:#f8fafc;
+border-radius:8px;
+}
+
+.small-input{
+width:90px;
 text-align:center;
-background:transparent;
 }
 
-.editable{
-outline:none;
+.amount-cell{
 font-weight:600;
 text-align:center;
-min-width:100px;
-padding:10px;
+min-width:120px;
 }
 
-.big-text:focus,
-.measure:focus,
-.editable:focus{
-background:#f8fafc;
-border-radius:10px;
+.center{
+text-align:center;
+}
+
+textarea.item-desc{
+min-height:60px;
 }
 
 /* BUTTONS */
@@ -204,21 +203,21 @@ margin-top:20px;
 }
 
 button{
-padding:14px 24px;
+padding:14px 22px;
 border:none;
 border-radius:12px;
 font-family:Poppins;
 font-weight:600;
 cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:translateY(-2px);
 }
 
 .primary{
 background:#0f172a;
-color:white;
-}
-
-.gold{
-background:#c8a96b;
 color:white;
 }
 
@@ -252,21 +251,19 @@ padding:18px 24px;
 border-bottom:1px solid #edf2f7;
 }
 
-.summary-edit{
-outline:none;
-padding:5px 10px;
-border-radius:8px;
+.summary input{
+width:120px;
+text-align:right;
+border:none;
+background:transparent;
 font-weight:600;
-}
-
-.summary-edit:focus{
-background:#f8fafc;
+padding:0;
 }
 
 .grand{
 background:#0f172a;
 color:white;
-font-size:20px;
+font-size:18px;
 font-weight:700;
 }
 
@@ -287,10 +284,10 @@ padding-top:50px;
 border-top:2px solid #cbd5e1;
 }
 
-/* PDF BUTTON */
+/* SAVE */
 
 .bottom-save{
-max-width:1500px;
+max-width:1400px;
 margin:25px auto;
 text-align:center;
 }
@@ -299,7 +296,6 @@ text-align:center;
 padding:18px 40px;
 font-size:18px;
 border-radius:14px;
-box-shadow:0 10px 25px rgba(0,0,0,0.12);
 }
 
 /* MOBILE */
@@ -322,8 +318,8 @@ font-size:28px;
 text-align:left;
 }
 
-.buttons button{
-width:100%;
+table{
+min-width:900px;
 }
 
 .summary{
@@ -344,18 +340,12 @@ display:none;
 body{
 background:white;
 padding:0;
-zoom:90%;
 }
 
 .container{
 box-shadow:none;
 border-radius:0;
 max-width:100%;
-width:100%;
-}
-
-textarea{
-overflow:hidden;
 }
 
 }
@@ -373,15 +363,12 @@ overflow:hidden;
 <div class="header">
 
 <div class="logo">
-
 <h1>AURA SPACE</h1>
-
 <p>Luxury Interior & Décor Solutions</p>
-
 </div>
 
 <div class="quote-title">
-<h3> 8121454316 </h3>
+<h3>8121454316</h3>
 <h2>INTERIOR QUOTATION</h2>
 
 <p contenteditable="true" id="date">
@@ -428,7 +415,7 @@ Client Information
 
 </div>
 
-<!-- PROJECT SCOPE -->
+<!-- PROJECT -->
 
 <div class="section">
 
@@ -442,7 +429,6 @@ Project Scope
 • Wardrobes<br>
 • TV Unit<br>
 • False Ceiling<br>
-• Shoe Rack<br>
 • Wallpaper & Lighting
 
 </div>
@@ -454,31 +440,31 @@ Project Scope
 <div class="section">
 
 <div class="section-title">
-Bill Of Quantities
+Bill Of Quantities (BOQ)
 </div>
 
 <div class="table-wrap">
 
-<table id="boq">
+<table>
 
 <thead>
 
 <tr>
-
-<th>#</th>
-<th>Item Description</th>
-<th>Material</th>
-<th>Length</th>
-<th>Height</th>
-<th>sq.ft</th>
-<th>Total</th>
+<th>S.No</th>
+<th>Description</th>
+<th>Specification</th>
+<th>Unit</th>
+<th>Qty</th>
+<th>Rate</th>
+<th>Amount</th>
 <th>Action</th>
-
 </tr>
 
 </thead>
 
-<tbody id="boqBody"></tbody>
+<tbody id="boqBody">
+
+</tbody>
 
 </table>
 
@@ -490,10 +476,6 @@ Bill Of Quantities
 + Add Item
 </button>
 
-<button class="gold" onclick="calculate()">
-Calculate
-</button>
-
 </div>
 
 <!-- SUMMARY -->
@@ -501,39 +483,23 @@ Calculate
 <div class="summary">
 
 <div class="summary-row">
-
 <span>Subtotal</span>
-
-<span id="subtotal"
-contenteditable="true"
-class="summary-edit">
-₹0
-</span>
-
+<input type="text" id="subtotal" value="₹0" readonly>
 </div>
 
-  <div class="summary-row">
-
+<div class="summary-row">
 <span>Discount %</span>
+<input type="number" id="discountPercent" value="0">
+</div>
 
-<span id="discountPercent"
-contenteditable="true"
-class="summary-edit">
-18
-</span>
-
+<div class="summary-row">
+<span>GST %</span>
+<input type="number" id="gstPercent" value="18">
 </div>
 
 <div class="summary-row grand">
-
 <span>Grand Total</span>
-
-<span id="grandTotal"
-contenteditable="true"
-class="summary-edit">
-₹0
-</span>
-
+<input type="text" id="grandTotal" value="₹0" readonly style="color:white;">
 </div>
 
 </div>
@@ -579,24 +545,6 @@ Final Handover – 10%
 
 </div>
 
-<!-- WARRANTY -->
-
-<div class="section">
-
-<div class="section-title">
-Warranty
-</div>
-
-<div class="edit-box" contenteditable="true">
-
-Plywood Warranty – 10 Years<br>
-Hardware Warranty – 5 Years<br>
-Workmanship Warranty – 2 Years
-
-</div>
-
-</div>
-
 <!-- TERMS -->
 
 <div class="section">
@@ -608,16 +556,10 @@ Terms & Conditions
 <div class="edit-box" contenteditable="true">
 
 1. Prices include material and labour only.<br><br>
-
-2. Electrical appliances excluded.<br><br>
-
-3. GST applicable extra.<br><br>
-
-4. Transport charges extra if applicable.<br><br>
-
-5. Design changes may affect costing.<br><br>
-
-6. Quotation validity 15 days.
+2. GST applicable extra.<br><br>
+3. Transport charges extra if applicable.<br><br>
+4. Design changes may affect costing.<br><br>
+5. Quotation validity 15 days.
 
 </div>
 
@@ -641,117 +583,76 @@ Authorized Signature – AURA SPACE
 
 </div>
 
-<!-- SAVE PDF BUTTON -->
+<!-- SAVE -->
 
 <div class="bottom-save">
 
-<button class="green big-save"
-onclick="savePDF()">
-
+<button class="green big-save" onclick="savePDF()">
 Save Complete Quotation PDF
-
 </button>
 
 </div>
 
 <script>
 
-/* AUTO DATE */
+/* DATE */
 
-if(
-document.getElementById("date").innerText.trim()===""
-){
-
+if(document.getElementById("date").innerText.trim()===""){
 document.getElementById("date").innerText=
 new Date().toLocaleDateString();
-
 }
 
 /* ADD ROW */
 
 function addRow(){
 
-let row = document.createElement("tr");
+let tbody=document.getElementById("boqBody");
 
-row.innerHTML = `
+let row=document.createElement("tr");
 
-<td class="serial"></td>
+row.innerHTML=`
 
-<td>
-
-<textarea class="big-text"
-placeholder="Item Description"></textarea>
-
-</td>
+<td class="center serial"></td>
 
 <td>
-
-<textarea class="big-text"
-placeholder="Material Details"></textarea>
-
+<textarea class="item-desc" placeholder="Item Description"></textarea>
 </td>
 
 <td>
-
-<input type="text"
-class="measure length"
-placeholder="8 ft">
-
+<textarea class="item-desc" placeholder="Material Specification"></textarea>
 </td>
 
 <td>
-
-<input type="text"
-class="measure height"
-placeholder="7 ft">
-
+<input type="text" class="small-input unit" placeholder="Sq.ft">
 </td>
 
 <td>
-
-<input type="text"
-class="measure depth"
-placeholder="2 ft">
-
-</td>
-
-<td contenteditable="true"
-class="editable sqft">
-0
+<input type="number" class="small-input qty" placeholder="0">
 </td>
 
 <td>
-
-<input type="number"
-class="measure rate"
-placeholder="Rate">
-
+<input type="number" class="small-input rate" placeholder="0">
 </td>
 
-<td contenteditable="true"
-class="editable total">
+<td class="amount-cell total">
 ₹0
 </td>
 
-<td>
-
-<button class="red"
-onclick="deleteRow(this)">
-X
-</button>
-
+<td class="center">
+<button class="red" onclick="deleteRow(this)">X</button>
 </td>
 
 `;
 
-document.getElementById("boqBody")
-.appendChild(row);
+tbody.appendChild(row);
 
 updateSerial();
 
+calculate();
+
 }
 
-/* DELETE */
+/* DELETE ROW */
 
 function deleteRow(btn){
 
@@ -767,23 +668,9 @@ calculate();
 
 function updateSerial(){
 
-document.querySelectorAll("#boqBody tr")
-.forEach((row,index)=>{
-
-row.querySelector(".serial").innerText =
-index+1;
-
+document.querySelectorAll(".serial").forEach((el,index)=>{
+el.innerText=index+1;
 });
-
-}
-
-/* NUMBER */
-
-function getNumber(value){
-
-let match=value.match(/[\d.]+/);
-
-return match ? parseFloat(match[0]) : 0;
 
 }
 
@@ -793,27 +680,17 @@ function calculate(){
 
 let subtotal=0;
 
-document.querySelectorAll("#boqBody tr")
-.forEach(row=>{
+document.querySelectorAll("#boqBody tr").forEach(row=>{
 
-let l=getNumber(
-row.querySelector(".length").value
-);
-
-let h=getNumber(
-row.querySelector(".height").value
-);
+let qty=parseFloat(
+row.querySelector(".qty").value
+)||0;
 
 let rate=parseFloat(
 row.querySelector(".rate").value
 )||0;
 
-let sqft=l*h;
-
-let total=sqft*rate;
-
-row.querySelector(".sqft").innerText=
-sqft.toFixed(2);
+let total=qty*rate;
 
 row.querySelector(".total").innerText=
 "₹"+total.toFixed(0);
@@ -822,58 +699,58 @@ subtotal+=total;
 
 });
 
-document.getElementById("subtotal")
-.innerText="₹"+subtotal.toFixed(0);
+document.getElementById("subtotal").value=
+"₹"+subtotal.toFixed(0);
 
 let discountPercent=
 parseFloat(
-document.getElementById("discountPercent")
-.innerText
+document.getElementById("discountPercent").value
 )||0;
-
-let discount=
-subtotal*(discountPercent/100);
-
-document.getElementById("discount")
-.innerText="₹"+discount.toFixed(0);
-
-let after=subtotal-discount;
 
 let gstPercent=
 parseFloat(
-document.getElementById("gstPercent")
-.innerText
+document.getElementById("gstPercent").value
 )||0;
 
-let gst=
-after*(gstPercent/100);
+let discount=subtotal*(discountPercent/100);
 
-document.getElementById("gst")
-.innerText="₹"+gst.toFixed(0);
+let afterDiscount=subtotal-discount;
 
-let grand=after+gst;
+let gst=afterDiscount*(gstPercent/100);
 
-document.getElementById("grandTotal")
-.innerText="₹"+grand.toFixed(0);
+let grandTotal=afterDiscount+gst;
+
+document.getElementById("grandTotal").value=
+"₹"+grandTotal.toFixed(0);
 
 }
+
+/* AUTO EVENT */
+
+document.addEventListener("input",function(e){
+
+if(
+e.target.classList.contains("qty") ||
+e.target.classList.contains("rate") ||
+e.target.id==="discountPercent" ||
+e.target.id==="gstPercent"
+){
+calculate();
+}
+
+});
 
 /* PDF */
 
 function savePDF(){
 
-window.scrollTo(0,0);
-
-setTimeout(()=>{
-
 window.print();
-
-},500);
 
 }
 
-document.addEventListener("input",calculate);
+/* DEFAULT ROWS */
 
+addRow();
 addRow();
 
 </script>
