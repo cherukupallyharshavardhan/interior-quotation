@@ -1,176 +1,460 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>AURA SPACE – Interior Quotation</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AURA SPACE | Interior Quotation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
-font-family:Segoe UI;
-background:#f4f6fb;
-padding:30px;
+font-family:'Poppins',sans-serif;
+background:#edf2f7;
+padding:20px;
+color:#1e293b;
 }
 
 .container{
-max-width:1100px;
+max-width:1500px;
 margin:auto;
 background:white;
-padding:40px;
-border-radius:10px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 40px rgba(0,0,0,0.08);
 }
 
-h1{
-margin-top:0;
+/* HEADER */
+
+.header{
+background:linear-gradient(135deg,#0f172a,#1e293b);
+padding:35px;
+color:white;
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.logo h1{
+font-size:36px;
+}
+
+.logo p{
+opacity:0.8;
+margin-top:5px;
+}
+
+.quote-title{
+text-align:right;
+}
+
+.quote-title h2{
+font-size:28px;
+}
+
+.quote-title p{
+margin-top:8px;
+opacity:0.8;
+outline:none;
+}
+
+/* CONTENT */
+
+.content{
+padding:35px;
 }
 
 .section{
-margin-top:35px;
+margin-top:40px;
 }
 
-.section h2{
-border-bottom:2px solid #eee;
-padding-bottom:5px;
+.section-title{
+font-size:22px;
+font-weight:600;
+margin-bottom:18px;
+padding-bottom:10px;
+border-bottom:2px solid #e2e8f0;
 }
 
-.edit{
-background:#fff8dc;
-padding:4px;
-border-radius:4px;
-}
+/* GRID */
 
 .grid{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px;
-margin-top:15px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
-input{
-width:100%;
-padding:8px;
-border:1px solid #ccc;
-border-radius:4px;
+.field{
+display:flex;
+flex-direction:column;
+gap:8px;
+}
+
+label{
+font-size:13px;
+font-weight:500;
+color:#64748b;
+}
+
+input,
+textarea,
+select{
+padding:14px;
+border:1px solid #dbe3ec;
+border-radius:12px;
+font-family:Poppins;
+font-size:14px;
+outline:none;
+}
+
+textarea{
+resize:vertical;
+min-height:120px;
+line-height:1.7;
+}
+
+.edit-box{
+background:#fffdf7;
+border:1px dashed #e5c98b;
+padding:20px;
+border-radius:16px;
+line-height:1.9;
+}
+
+/* TABLE */
+
+.table-wrap{
+overflow:auto;
+border:1px solid #e2e8f0;
+border-radius:18px;
 }
 
 table{
 width:100%;
 border-collapse:collapse;
-margin-top:15px;
+min-width:1500px;
 }
 
 th{
-background:#1e2a38;
+background:#0f172a;
 color:white;
-padding:10px;
+padding:16px;
+font-size:13px;
+text-transform:uppercase;
 }
 
 td{
-border:1px solid #eee;
-padding:6px;
-text-align:center;
+padding:10px;
+border-bottom:1px solid #edf2f7;
+vertical-align:top;
 }
 
-td input{
+.big-text{
 width:100%;
+min-height:120px;
 border:none;
+outline:none;
+font-family:Poppins;
+background:transparent;
+padding:10px;
+}
+
+.measure{
+width:100%;
+padding:10px;
+border:none;
+outline:none;
 text-align:center;
+background:transparent;
 }
 
-button{
-background:#1e2a38;
-color:white;
-border:none;
-padding:10px 15px;
-border-radius:5px;
-cursor:pointer;
-margin-top:10px;
+.editable{
+outline:none;
+font-weight:600;
+text-align:center;
+min-width:100px;
+padding:10px;
 }
 
-button:hover{
-background:#2e4053;
+.big-text:focus,
+.measure:focus,
+.editable:focus{
+background:#f8fafc;
+border-radius:10px;
 }
 
-.summary{
-width:320px;
-margin-left:auto;
+/* BUTTONS */
+
+.buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
 margin-top:20px;
 }
 
-.row{
+button{
+padding:14px 24px;
+border:none;
+border-radius:12px;
+font-family:Poppins;
+font-weight:600;
+cursor:pointer;
+}
+
+.primary{
+background:#0f172a;
+color:white;
+}
+
+.gold{
+background:#c8a96b;
+color:white;
+}
+
+.green{
+background:#16a34a;
+color:white;
+}
+
+.red{
+background:#ef4444;
+color:white;
+padding:10px 14px;
+}
+
+/* SUMMARY */
+
+.summary{
+width:100%;
+max-width:420px;
+margin-left:auto;
+margin-top:30px;
+border:1px solid #e2e8f0;
+border-radius:18px;
+overflow:hidden;
+}
+
+.summary-row{
 display:flex;
 justify-content:space-between;
-padding:6px;
-border-bottom:1px solid #eee;
+padding:18px 24px;
+border-bottom:1px solid #edf2f7;
+}
+
+.summary-edit{
+outline:none;
+padding:5px 10px;
+border-radius:8px;
+font-weight:600;
+}
+
+.summary-edit:focus{
+background:#f8fafc;
 }
 
 .grand{
-font-size:18px;
-font-weight:bold;
+background:#0f172a;
+color:white;
+font-size:20px;
+font-weight:700;
 }
+
+/* SIGNATURE */
 
 .signature{
 display:flex;
 justify-content:space-between;
+gap:30px;
 margin-top:60px;
+flex-wrap:wrap;
 }
 
+.sign{
+flex:1;
+min-width:250px;
+padding-top:50px;
+border-top:2px solid #cbd5e1;
+}
+
+/* PDF BUTTON */
+
+.bottom-save{
+max-width:1500px;
+margin:25px auto;
+text-align:center;
+}
+
+.big-save{
+padding:18px 40px;
+font-size:18px;
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+body{
+padding:10px;
+}
+
+.content{
+padding:20px;
+}
+
+.logo h1{
+font-size:28px;
+}
+
+.quote-title{
+text-align:left;
+}
+
+.buttons button{
+width:100%;
+}
+
+.summary{
+max-width:100%;
+}
+
+}
+
+/* PRINT */
+
 @media print{
-button{display:none;}
+
+.buttons,
+.bottom-save{
+display:none;
+}
+
+body{
+background:white;
+padding:0;
+zoom:90%;
+}
+
+.container{
+box-shadow:none;
+border-radius:0;
+max-width:100%;
+width:100%;
+}
+
+textarea{
+overflow:hidden;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
 
 <div class="container">
 
-<h1 contenteditable class="edit">AURA SPACE – Interior & Décor</h1>
-<p contenteditable class="edit">Interior Design Proposal</p>
+<!-- HEADER -->
 
-<div class="grid">
+<div class="header">
 
-<input placeholder="Client Name">
-<input placeholder="Phone">
+<div class="logo">
 
-<input placeholder="Project Location">
-<input placeholder="Date">
+<h1>AURA SPACE</h1>
 
-<input placeholder="Project Type">
-
-<input placeholder="Quote No:">
+<p>Luxury Interior & Décor Solutions</p>
 
 </div>
 
+<div class="quote-title">
 
-<div class="section">
+<h2>INTERIOR QUOTATION</h2>
 
-<h2>Project Scope</h2>
-
-<p contenteditable class="edit">
-
-• Modular Kitchen <br>
-• Bedroom Wardrobes <br>
-• False Ceiling <br>
-• TV Unit <br>
-• Shoe Rack <br>
-• Pooja Unit <br>
-• Beds With Storage <br>
-• Utility Cupboard
-
+<p contenteditable="true" id="date">
+23/05/2026
 </p>
 
 </div>
 
+</div>
 
+<div class="content">
 
+<!-- CLIENT -->
 
 <div class="section">
 
-<h2>Bill Of Quantities</h2>
+<div class="section-title">
+Client Information
+</div>
 
+<div class="grid">
+
+<div class="field">
+<label>Client Name</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>Phone Number</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>Project Location</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>Quotation Number</label>
+<input type="text" value="AURA-2026-001">
+</div>
+
+</div>
+
+</div>
+
+<!-- PROJECT SCOPE -->
+
+<div class="section">
+
+<div class="section-title">
+Project Scope
+</div>
+
+<div class="edit-box" contenteditable="true">
+
+• Modular Kitchen<br>
+• Wardrobes<br>
+• TV Unit<br>
+• False Ceiling<br>
+• Shoe Rack<br>
+• Wallpaper & Lighting
+
+</div>
+
+</div>
+
+<!-- BOQ -->
+
+<div class="section">
+
+<div class="section-title">
+Bill Of Quantities
 </div>
 
 <div class="table-wrap">
@@ -212,268 +496,425 @@ button{display:none;}
 Calculate
 </button>
 
-<button class="green" onclick="window.print()">
-Save PDF
+</div>
+
+<!-- SUMMARY -->
+
+<div class="summary">
+
+<div class="summary-row">
+
+<span>Subtotal</span>
+
+<span id="subtotal"
+contenteditable="true"
+class="summary-edit">
+₹0
+</span>
+
+</div>
+
+<div class="summary-row">
+
+<span>Discount %</span>
+
+<span id="discountPercent"
+contenteditable="true"
+class="summary-edit">
+10
+</span>
+
+</div>
+
+<div class="summary-row">
+
+<span>Discount Amount</span>
+
+<span id="discount"
+contenteditable="true"
+class="summary-edit">
+₹0
+</span>
+
+</div>
+
+<div class="summary-row">
+
+<span>GST %</span>
+
+<span id="gstPercent"
+contenteditable="true"
+class="summary-edit">
+18
+</span>
+
+</div>
+
+<div class="summary-row">
+
+<span>GST Amount</span>
+
+<span id="gst"
+contenteditable="true"
+class="summary-edit">
+₹0
+</span>
+
+</div>
+
+<div class="summary-row grand">
+
+<span>Grand Total</span>
+
+<span id="grandTotal"
+contenteditable="true"
+class="summary-edit">
+₹0
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MATERIAL -->
+
+<div class="section">
+
+<div class="section-title">
+Material Specifications
+</div>
+
+<div class="edit-box" contenteditable="true">
+
+19mm BWP Marine Plywood<br>
+Premium Laminate Finish<br>
+Soft Close Hinges<br>
+PVC Edge Banding<br>
+LED Profile Lighting
+
+</div>
+
+</div>
+
+<!-- PAYMENT -->
+
+<div class="section">
+
+<div class="section-title">
+Payment Terms
+</div>
+
+<div class="edit-box" contenteditable="true">
+
+Design Confirmation – 10%<br>
+Advance Payment – 40%<br>
+Mid Execution – 40%<br>
+Final Handover – 10%
+
+</div>
+
+</div>
+
+<!-- WARRANTY -->
+
+<div class="section">
+
+<div class="section-title">
+Warranty
+</div>
+
+<div class="edit-box" contenteditable="true">
+
+Plywood Warranty – 10 Years<br>
+Hardware Warranty – 5 Years<br>
+Workmanship Warranty – 2 Years
+
+</div>
+
+</div>
+
+<!-- TERMS -->
+
+<div class="section">
+
+<div class="section-title">
+Terms & Conditions
+</div>
+
+<div class="edit-box" contenteditable="true">
+
+1. Prices include material and labour only.<br><br>
+
+2. Electrical appliances excluded.<br><br>
+
+3. GST applicable extra.<br><br>
+
+4. Transport charges extra if applicable.<br><br>
+
+5. Design changes may affect costing.<br><br>
+
+6. Quotation validity 15 days.
+
+</div>
+
+</div>
+
+<!-- SIGNATURE -->
+
+<div class="signature">
+
+<div class="sign">
+Client Signature
+</div>
+
+<div class="sign">
+Authorized Signature – AURA SPACE
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- SAVE PDF BUTTON -->
+
+<div class="bottom-save">
+
+<button class="green big-save"
+onclick="savePDF()">
+
+Save Complete Quotation PDF
+
 </button>
 
 </div>
 
-<div class="section">
-
-<h2>Material Specifications</h2>
-
-<p contenteditable class="edit">
-
-19mm BWP Marine Plywood <br>
-1mm Decorative Laminate Finish <br>
-Soft Close Hinges <br>
-Telescopic Drawer Channels <br>
-Premium Edge Banding <br>
-Gypsum False Ceiling With LED Profiles
-
-</p>
-
-</div>
-
-
-<div class="section">
-
-<h2>Hardware Brands</h2>
-
-<p contenteditable class="edit">
-
-Hettich <br>
-Häfele <br>
-Ebco
-
-</p>
-
-</div>
-
-
-<div class="section">
-
-<h2>Project Timeline</h2>
-
-<p contenteditable class="edit">
-Estimated Completion: 30–35 Days
-</p>
-
-</div>
-
-
-<div class="section">
-
-<h2>Payment Terms</h2>
-
-<table>
-
-<tr>
-<th>Stage</th>
-<th>Payment</th>
-</tr>
-<tr>
-<td>2D/3D design selection</td>
-<td contenteditable class="edit">10%</td>
-</tr>
-
-<tr>
-<td>Advance</td>
-<td contenteditable class="edit">40%</td>
-</tr>
-
-<tr>
-<td>Mid Work</td>
-<td contenteditable class="edit">40%</td>
-</tr>
-
-<tr>
-<td>Completion</td>
-<td contenteditable class="edit">10%</td>
-</tr>
-
-</table>
-
-</div>
-
-
-<div class="section">
-
-<h2>Warranty</h2>
-
-<p contenteditable class="edit">
-
-Plywood Warranty – 10 Years <br>
-Hardware Warranty – 5 Years <br>
-Workmanship Warranty – 2 Years
-
-</p>
-
-</div>
-
-
-<div class="section">
-
-<h2>Terms & Conditions</h2>
-
-<p contenteditable class="edit">
-
-Prices include material and labour only. <br>
-Electrical appliances not included. <br>
-Design changes during execution may change the cost. <br>
-Transport charges extra. <br>
-Quotation valid for 15 days.
-
-</p>
-
-</div>
-
-
-<div class="signature">
-
-<div>
-Client Signature<br><br>
-____________________
-</div>
-
-<div>
-Company Signature<br><br>
-AURA SPACE – Interior & Décor
-</div>
-
-</div>
-
-<br>
-
-<div style="margin-top:20px">
-
-<button onclick="shareWhatsApp()">Share WhatsApp</button>
-
-<button onclick="window.print()">Save PDF</button>
-</div>
-
-</div>
-
-
 <script>
+
+/* AUTO DATE */
+
+if(
+document.getElementById("date").innerText.trim()===""
+){
+
+document.getElementById("date").innerText=
+new Date().toLocaleDateString();
+
+}
+
+/* ADD ROW */
 
 function addRow(){
 
-let tbody=document.querySelector("#boq tbody")
+let row = document.createElement("tr");
 
-let row=document.createElement("tr")
+row.innerHTML = `
 
-row.innerHTML=`
+<td class="serial"></td>
 
-<td></td>
+<td>
 
-<td><input placeholder="Wardrobe / TV Unit"></td>
+<textarea class="big-text"
+placeholder="Item Description"></textarea>
 
-<td><input placeholder="BWP / HDHMR"></td>
+</td>
 
-<td><input type="number" class="l"></td>
+<td>
 
-<td><input type="number" class="h"></td>
+<textarea class="big-text"
+placeholder="Material Details"></textarea>
 
-<td><input type="number" class="d"></td>
+</td>
 
-<td class="area">0</td>
+<td>
 
-<td><input type="number" class="r"></td>
+<input type="text"
+class="measure length"
+placeholder="8 ft">
 
-<td class="t">0</td>
+</td>
 
-<td><button onclick="removeRow(this)">X</button></td>
+<td>
 
-`
+<input type="text"
+class="measure height"
+placeholder="7 ft">
 
-tbody.appendChild(row)
+</td>
 
-updateNumbers()
+<td>
+
+<input type="text"
+class="measure depth"
+placeholder="2 ft">
+
+</td>
+
+<td contenteditable="true"
+class="editable sqft">
+0
+</td>
+
+<td>
+
+<input type="number"
+class="measure rate"
+placeholder="Rate">
+
+</td>
+
+<td contenteditable="true"
+class="editable total">
+₹0
+</td>
+
+<td>
+
+<button class="red"
+onclick="deleteRow(this)">
+X
+</button>
+
+</td>
+
+`;
+
+document.getElementById("boqBody")
+.appendChild(row);
+
+updateSerial();
 
 }
 
-function removeRow(btn){
+/* DELETE */
 
-btn.parentElement.parentElement.remove()
+function deleteRow(btn){
 
-updateNumbers()
-calculate()
+btn.closest("tr").remove();
 
-}
+updateSerial();
 
-function updateNumbers(){
-
-let rows=document.querySelectorAll("#boq tbody tr")
-
-rows.forEach((row,i)=>{
-
-row.children[0].innerText=i+1
-
-})
+calculate();
 
 }
 
-document.addEventListener("input",calculate)
+/* SERIAL */
+
+function updateSerial(){
+
+document.querySelectorAll("#boqBody tr")
+.forEach((row,index)=>{
+
+row.querySelector(".serial").innerText =
+index+1;
+
+});
+
+}
+
+/* NUMBER */
+
+function getNumber(value){
+
+let match=value.match(/[\d.]+/);
+
+return match ? parseFloat(match[0]) : 0;
+
+}
+
+/* CALCULATE */
 
 function calculate(){
 
-let rows=document.querySelectorAll("#boq tbody tr")
+let subtotal=0;
 
-let subtotal=0
+document.querySelectorAll("#boqBody tr")
+.forEach(row=>{
 
-rows.forEach(row=>{
+let l=getNumber(
+row.querySelector(".length").value
+);
 
-let l=row.querySelector(".l").value||0
-let h=row.querySelector(".h").value||0
-let r=row.querySelector(".r").value||0
+let h=getNumber(
+row.querySelector(".height").value
+);
 
-let area=l*h
+let rate=parseFloat(
+row.querySelector(".rate").value
+)||0;
 
-let total=area*r
+let sqft=l*h;
 
-row.querySelector(".area").innerText=area
+let total=sqft*rate;
 
-row.querySelector(".t").innerText=total
+row.querySelector(".sqft").innerText=
+sqft.toFixed(2);
 
-subtotal+=total
+row.querySelector(".total").innerText=
+"₹"+total.toFixed(0);
 
-})
+subtotal+=total;
 
-let discount=subtotal*0.10
+});
 
-let after=subtotal-discount
+document.getElementById("subtotal")
+.innerText="₹"+subtotal.toFixed(0);
 
-let gst=after*0.18
+let discountPercent=
+parseFloat(
+document.getElementById("discountPercent")
+.innerText
+)||0;
 
-let grand=after+gst
+let discount=
+subtotal*(discountPercent/100);
 
-document.getElementById("subtotal").innerText=subtotal.toFixed(0)
-document.getElementById("discount").innerText=discount.toFixed(0)
-document.getElementById("gst").innerText=gst.toFixed(0)
-document.getElementById("grand").innerText=grand.toFixed(0)
+document.getElementById("discount")
+.innerText="₹"+discount.toFixed(0);
+
+let after=subtotal-discount;
+
+let gstPercent=
+parseFloat(
+document.getElementById("gstPercent")
+.innerText
+)||0;
+
+let gst=
+after*(gstPercent/100);
+
+document.getElementById("gst")
+.innerText="₹"+gst.toFixed(0);
+
+let grand=after+gst;
+
+document.getElementById("grandTotal")
+.innerText="₹"+grand.toFixed(0);
 
 }
-function shareWhatsApp(){
 
-let client = document.querySelector("input[placeholder='Client Name']").value
+/* PDF */
 
-let total = document.getElementById("grand").innerText
+function savePDF(){
 
-let message =
-"Interior Quotation\n\n" +
-"Client: " + client + "\n" +
-"Grand Total: ₹" + total + "\n\n" +
-"Shared via AURA SPACE";
+window.scrollTo(0,0);
 
-let url = "https://wa.me/?text=" + encodeURIComponent(message)
+setTimeout(()=>{
 
-window.open(url,"_blank")
+window.print();
+
+},500);
 
 }
+
+document.addEventListener("input",calculate);
+
+addRow();
 
 </script>
-
 
 </body>
 </html>
